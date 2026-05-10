@@ -1,84 +1,61 @@
-# 🔖 LinkVault
+# LinkVault
 
-> Save, organize, and rediscover your links — effortlessly.
+A clean, minimal, and fast bookmark manager. Built to be a lightweight alternative to Pocket or Raindrop, focusing on speed and a refined "Apple-style" aesthetic.
 
-LinkVault is a modern, minimal, and premium bookmark manager built with **Next.js 15**, **Supabase**, and **Tailwind CSS**. Designed with an Apple-like aesthetic, it offers a seamless experience for managing your digital library.
-
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Next.js](https://img.shields.io/badge/Next.js-15-black.svg)
-![Supabase](https://img.shields.io/badge/Supabase-Auth%20%26%20DB-green.svg)
+LinkVault handles your links without the bloat. It automatically grabs metadata, organizes everything with tags, and stays out of your way.
 
 ---
 
-## ✨ Features
+## What's inside?
 
-- **🚀 Core CRUD**: Create, read, update, and delete bookmarks with ease.
-- **🪄 Auto-Meta Fetch**: Automatically grab titles, descriptions, and site icons using our server-side parser.
-- **🔍 Instant Search**: Real-time search across titles, URLs, and descriptions with debouncing.
-- **🏷️ Tag Management**: Organize your links with custom-colored tags.
-- **⭐ Favorites**: Mark important links for quick access.
-- **🌗 Dark Mode**: Fully immersive "Apple-like" dark mode experience.
-- **📥 Import/Export**: Batch import from browser HTML files and export your data as JSON.
-- **🔒 Secure Auth**: Built-in authentication powered by Supabase (Email & Google).
+- **Simple CRUD**: Fast management of your links.
+- **Auto-Metadata**: Give it a URL, and LinkVault handles the title, description, and site icon using a server-side parser.
+- **Minimal Sidebar**: Quick navigation through your library and custom tags.
+- **Instant Search**: Real-time filtering with debounced input.
+- **Dark Mode**: A deep, immersive dark theme that follows your system or manual preference.
+- **Data Freedom**: Import your existing bookmarks via HTML and export everything to JSON whenever you want.
+- **Solid Auth**: Secure sign-in via Supabase, including Google OAuth support.
 
----
-
-## 🛠️ Tech Stack
+## The Stack
 
 - **Framework**: Next.js 15 (App Router)
-- **Database/Auth**: Supabase (PostgreSQL + RLS)
-- **Styling**: Tailwind CSS + Shadcn/UI
+- **Database**: PostgreSQL (Supabase)
+- **Styling**: Tailwind CSS 4.0
+- **UI Components**: Shadcn/UI
 - **Icons**: Lucide React
-- **Typography**: Inter (Apple-system optimized)
-- **Parsing**: Cheerio (Server-side metadata extraction)
+- **Parsing**: Cheerio
 
 ---
 
-## 🚀 Getting Started
+## Setup Guide
 
-### Prerequisites
+### 1. Clone & Install
+```bash
+git clone https://github.com/your-username/linkvault.git
+cd linkvault
+npm install
+```
 
-- Node.js 18+ 
-- A Supabase account
+### 2. Environment Variables
+Create a `.env.local` file and plug in your Supabase credentials:
+```env
+NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
 
-### Installation
+### 3. Database Migration
+Copy the SQL from `supabase/migrations/20260510000000_init_schema.sql` and run it in your Supabase SQL Editor to set up the tables and RLS policies.
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/linkvault.git
-   cd linkvault
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Set up Environment Variables**
-   Create a `.env.local` file in the root:
-   ```env
-   NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-   NEXT_PUBLIC_APP_URL=http://localhost:3000
-   ```
-
-4. **Initialize Database**
-   Run the SQL provided in `supabase/migrations/20260510000000_init_schema.sql` in your Supabase SQL Editor.
-
-5. **Run Development Server**
-   ```bash
-   npm run dev
-   ```
-   Open [http://localhost:3000](http://localhost:3000) to see your LinkVault.
+### 4. Development
+```bash
+npm run dev
+```
 
 ---
 
-## 📖 Documentation
+## More Info
+Check out the [Technical Documentation](./DOCUMENTATION.md) for a deep dive into the folder structure and architecture.
 
-For detailed information on architecture, folder structure, and advanced usage, please refer to our [Full Documentation](./DOCUMENTATION.md).
-
----
-
-## 📝 License
-
-This project is licensed under the [MIT License](./LICENSE).
+## License
+MIT

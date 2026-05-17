@@ -1,6 +1,5 @@
 # LinkVault
 
-
 A clean, minimal, and fast bookmark manager. Built to be a lightweight alternative to Pocket or Raindrop, focusing on speed and a refined "Apple-style" aesthetic.
 
 LinkVault handles your links without the bloat. It automatically grabs metadata, organizes everything with tags, and stays out of your way.
